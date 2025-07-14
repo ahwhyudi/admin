@@ -59,7 +59,7 @@
                         </div>
                         <div class="text-center mt-3">
                             <div class="btn btn-outline-warning add_pilihan">Tambah Pilihan</div>
-                            <div class="btn btn-outline-warning ">Hapus Pilihan</div>
+                            {{-- <div class="btn btn-outline-warning ">Hapus Pilihan</div> --}}
                         </div>
                         {{-- end data pilihan ganda --}}
                       </div>

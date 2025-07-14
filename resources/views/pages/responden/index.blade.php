@@ -23,12 +23,12 @@
                 <div class="col-md-12">
                     <form action="">
                         <div class="d-flex justify-content-end">
-                            <div class="">
+                            {{-- <div class="">
                                 <input type="date" class="form-control" placeholder="Start Date" value="{{request()->get("start_date")}}" name="start_date">
                             </div>
                             <div class="ms-3">
                                 <input type="date" class="form-control" placeholder="End Date" value="{{request()->get("end_date")}}" name="end_date">
-                            </div>
+                            </div> --}}
                             <div class="ms-3">
                                 <select name="surveyor" id="" class="form-select">
                                     <option value="">Survoyer</option>
@@ -37,7 +37,7 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="ms-3">
+                            {{-- <div class="ms-3">
 
                                 <select name="provinsi" id="provinsi" class="form-select">
                                     <option value="">Provinsi</option>
@@ -55,7 +55,7 @@
                                 <select name="kecamatan" id="kecamatan" class="form-select">
                                     <option value="">Kecamatan</option>
                                 </select>
-                            </div>
+                            </div> --}}
                             <div class="ms-3">
                                 @if (request()->get("provinsi") || request()->get("kota") || request()->get("kecamatan") || (int)request()->get('surveyor') || request()->get("start_date") || request()->get("end_date"))
                                     <a href="/admin/data/responden" class="btn btn-outline-warning">Reset</a>
@@ -150,16 +150,16 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-3 border rounded me-3 p-2">
-                                <div class="">Provinsi</div>
+                            <div class="col border rounded me-3 p-2">
+                                <div>Provinsi</div>
                                 <div class="h2 mb-0" id="count_Provinsi">0</div>
                             </div>
-                            <div class="col-md-3 border rounded me-3 p-2">
-                                <div class="">Kota</div>
+                            <div class="col border rounded me-3 p-2">
+                                <div>Kota</div>
                                 <div class="h2 mb-0" id="count_Kota">0</div>
                             </div>
-                            <div class="col-md-3 border rounded me-3 p-2">
-                                <div class="">Kecamatan</div>
+                            <div class="col border rounded me-3 p-2">
+                                <div>Kecamatan</div>
                                 <div class="h2 mb-0" id="count_Kecamatan">0</div>
                             </div>
                         </div>
@@ -248,7 +248,7 @@
             },
             yaxis: {
             title: {
-                text: 'Statistik Diagram Relawan',
+                text: 'Statistik Diagram Responden',
             },
             },
             fill: {

@@ -63,7 +63,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($items as $dataItem)
+                        {{-- @forelse ($items as $dataItem)
                             <tr>
                                 <td>{{$dataItem->soal ? $dataItem->soal->title : "-"}}</td>
 
@@ -78,7 +78,26 @@
                             </tr>
                         @empty
 
-                        @endforelse
+                        @endforelse --}}
+                        @forelse ($items as $dataItem)
+    <tr>
+        <td>{{ $dataItem->soal ? $dataItem->soal->title : "-" }}</td>
+
+        <td>
+            @if ($dataItem->yes_no)
+                {{ $dataItem->yes_no }}
+            @else
+                {{ $dataItem->pilihan ? $dataItem->pilihan->title : '-' }}
+            @endif
+        </td>
+        <td>{{ $dataItem->created_at }}</td>
+    </tr>
+@empty
+    <tr>
+        <td colspan="3" class="text-center">Tidak ada data</td>
+    </tr>
+@endforelse
+
                     </tbody>
                 </table>
             </div>

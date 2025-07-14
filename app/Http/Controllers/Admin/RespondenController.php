@@ -140,6 +140,7 @@ class RespondenController extends Controller
         try {
             return Excel::download(new DataTargetExport, 'responden-'.Carbon::now()->format("d-M-Y H:i").'.xlsx');
         } catch (Exception $th) {
+            
             return redirect()->back()->with('error', "Failed export data");
         }
 
@@ -156,6 +157,7 @@ class RespondenController extends Controller
 
             return Excel::download(new ExporAllKuisionerWithResponden, 'hasil-survey-'.Carbon::now()->format("d-M-Y H:i").'.xlsx');
         } catch (Exception $th) {
+            // dd($th);
             return redirect()->back()->with('error', "Failed export data");
         }
 
